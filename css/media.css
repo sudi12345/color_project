@@ -85,30 +85,85 @@
         margin: 10px;
         height: 325px;
         width: 300px; } }
-@media screen and (max-width: 425px) {
-  .navbar .navbar_container .navbar_toggle {
+@media screen and (max-width: 720px) {
+  .navbar_container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    max-width: 1300px;
+    padding: 0; }
+
+  .navbar_menu {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 0;
+    width: 100%;
+    position: absolute;
+    top: -1000px;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: -1; }
+
+  .navbar_menu.active {
+    background: #131313;
+    top: 100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 99;
+    height: 60vh;
+    font-size: 1.6rem; }
+
+  #navbar_logo {
+    padding-left: 25px; }
+
+  .navbar_toggle .bar {
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background: #fff; }
+
+  .navbar_item {
+    width: 100%; }
+
+  .navbar_links {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table; }
+
+  .navbar_btn {
+    padding-bottom: 2rem; }
+
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80px;
+    margin: 0; }
+
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%); }
+
+  .navbar_toggle .bar {
     display: block;
     cursor: pointer; }
 
-  .v-class {
+  #mobile-menu.is-active .bar:nth-child(2) {
     opacity: 0; }
 
-  .v-hight {
-    height: 50px; }
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); }
 
-  .navbar {
-    display: flex;
-    flex-direction: column; }
-    .navbar .navbar_container {
-      display: flex;
-      flex-direction: column;
-      padding: 0 0px; }
-      .navbar .navbar_container #navbar_logo {
-        margin: auto; }
-      .navbar .navbar_container .navbar_menu {
-        display: flex;
-        flex-direction: column; }
-
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg); } }
+@media screen and (max-width: 425px) {
   .hero {
     padding: 30px 0; }
     .hero .hero_container .hero_heading {
